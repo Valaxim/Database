@@ -1,0 +1,30 @@
+/*
+
+CREATE TABLE user
+(
+    id INT(11) PRIMARY KEY NOT NULL,
+    username VARCHAR(100),
+    password VARCHAR(100)
+);
+CREATE TABLE cd
+(
+    id INT(11) PRIMARY KEY NOT NULL,
+    name VARCHAR(100)
+);
+CREATE TABLE orders
+(
+    id INT(11) PRIMARY KEY NOT NULL,
+    user_id INT(11) NOT NULL,
+    cd_id INT(11) NOT NULL
+);
+CREATE UNIQUE INDEX table_name_id_uindex ON user (id);
+CREATE UNIQUE INDEX cd_id_uindex ON cd (id);
+ALTER TABLE orders ADD FOREIGN KEY (cd_id) REFERENCES cd (id) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE orders ADD FOREIGN KEY (user_id) REFERENCES user (id) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE orders ADD FOREIGN KEY (cd_id) REFERENCES cd (id) ON DELETE CASCADE ON UPDATE CASCADE;
+ALTER TABLE orders ADD FOREIGN KEY (user_id) REFERENCES user (id) ON DELETE CASCADE ON UPDATE CASCADE;
+CREATE INDEX FK54y7ct53o12au1rl7a9itncao ON orders (cd_id);
+CREATE INDEX FKel9kyl84ego2otj2accfd8mr7 ON orders (user_id);
+CREATE UNIQUE INDEX order_id_uindex ON orders (id);
+
+*/
